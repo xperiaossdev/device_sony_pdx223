@@ -22,8 +22,8 @@
 # definition file).
 #
 
-# Inherit from sony sm8450-common
-$(call inherit-product, device/sony/sm8450-common/common.mk)
+# Inherit from sony nagara
+$(call inherit-product, device/sony/nagara/common.mk)
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2560

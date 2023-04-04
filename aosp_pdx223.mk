@@ -18,15 +18,24 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
+# Inherit some common AOSP stuff.
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+
 # Inherit from device.mk
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
-
+# Enviroment Flags
 IS_PHONE := true
+TARGET_BUILD_WITH_LTO := true
+TARGET_SUPPORTS_QUICK_TAP := false
 
-PRODUCT_NAME := lineage_pdx223
+# Boot Animation
+TARGET_SCREEN_HEIGHT := 2560
+TARGET_SCREEN_WIDTH := 1096
+TARGET_BOOT_ANIMATION_RES := 1080
+
+# Device Identifiers
+PRODUCT_NAME := aosp_pdx223
 PRODUCT_DEVICE := pdx223
 PRODUCT_MANUFACTURER := Sony
 PRODUCT_BRAND := Sony
