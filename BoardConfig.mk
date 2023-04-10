@@ -37,5 +37,9 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 # OTA Assert
 TARGET_OTA_ASSERT_DEVICE := pdx223,XQ-CT44,XQ-CT54,XQ-CT62,XQ-CT72,A201SO,SO-51C,SOG06
 
+# Props
+TARGET_ODM_PROP += $(DEVICE_PATH)/configs/props/odm.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/props/vendor.prop
+
 # inherit from the proprietary version
 include vendor/sony/nagara/pdx223/BoardConfigVendor.mk
