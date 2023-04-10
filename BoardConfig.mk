@@ -23,7 +23,7 @@ DEVICE_PATH := device/sony/pdx223
 TARGET_SCREEN_DENSITY := 420
 
 BOARD_KERNEL_CMDLINE += buildproduct=pdx223
-TARGET_KERNEL_CONFIG := vendor/pdx223.config 
+TARGET_KERNEL_CONFIG += vendor/pdx223.config 
 
 BOARD_MKBOOTIMG_ARGS += --base $(BOARD_KERNEL_BASE)
 BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE)
@@ -34,7 +34,8 @@ BOARD_MKBOOTIMG_ARGS += --second_offset $(BOARD_KERNEL_SECOND_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 
+# OTA Assert
 TARGET_OTA_ASSERT_DEVICE := pdx223,XQ-CT44,XQ-CT54,XQ-CT62,XQ-CT72,A201SO,SO-51C,SOG06
 
 # inherit from the proprietary version
-include vendor/sony/pdx223/BoardConfigVendor.mk
+include vendor/sony/nagara/pdx223/BoardConfigVendor.mk
